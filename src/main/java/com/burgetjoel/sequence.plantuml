@@ -1,0 +1,236 @@
+@startuml Capstone
+skinparam Style strictuml
+interface LoginController
+
+class LoginController{
+    +String username
+    +String password
+    +String systemLanguage
+
+    +void initialize()
+    +void loginAction(ActionEvent)
+    +void cancelAction(ActionEvent)
+    +String getUserName()
+}
+
+class MainController{
+    + initialize()
+    + newCustomerAction()
+    + refreshCustomerTable()
+    + getSelectedCustomer()
+    + Appointment getSelectedAppointment()
+    + modifyCustomerAction()
+    + deleteCustomerAction()
+    + modifyCustomerAction()
+    + refreshCustomerTable()
+    + deleteAppointmentAction()
+    + typeReport()
+    + contactReport()
+    + totalHoursReport()
+    + searchByAppointmentId()
+    + searchByAppointmentId()
+    + searchByAppoinmentTitle()
+    + searchByAppoinmentLocation()
+}
+
+class AddCustomerController{
+    +String state;
+    +ObservableList<String> countries
+    +ObservableList<String> states
+
+    +void initialize()
+    +void addButtonAction()
+    +void setMainController()
+    +void cancelButtonAction()
+}
+
+class Appointment{
+    -int appointmentID 
+    -String title
+    -String description
+    -String location 
+    -String type
+    -LocalDateTime start
+    -LocalDateTime end
+    -String startString
+    -String endString
+    -String createdBy
+    -String customerID
+    -int userID 
+    -int contactID
+
+    +Appointment()
+    +Appointment()
+    +ObservableList<Appointment> getAllWeekAppointments()
+    +ObservableList<Appointment> getAllMonthAppointments()
+    +ObservableList<Appointment> getAllAppointments()
+    +createAppointment()
+    +generateAppointmentID()
+    +getAppointmentID()
+    +setAppointmentID()
+    +getTitle()
+    +setTitle()
+    +getDescription()
+    +setDescription()
+    +getLocation()
+    +setLocation()
+    +getType()
+    +setType()
+    +getStart()
+    +setStart()
+    +getStartString()
+    +setStart()
+    +getEnd()
+    +getEndString()
+    +setEnd()
+    +getEndString()
+    +setEnd()
+    +getCreatedBy()
+    +setCreatedBy()
+    +getCustomerID()
+    +setCustomerID()
+    +getUserID()
+    +setUserID()
+    +getContactID()
+    +setContactID()
+}
+
+class AppointmentCRUD{
+    +getAppointments()
+    +createAppointment()
+    +deleteAppointment()
+    +updateAppointment()
+}
+
+class CreateAppointmentController{
+    +initialize()
+    +setMainController()
+    +saveButtonAction()
+    +cancelButtonAction()
+    +convertToUtc()
+    +verifySave()
+    +isAvailable()
+    +testCases()
+}
+
+class Customers{
+    -int customerID
+    -String customerName
+    -String Address
+    -String customerZip
+    -String customerPhone
+    -int divisionId
+
+    +Customers()
+    +getCustomerId()
+    +setCustomerId()
+    +getAllCustomers()
+    +createCustomers()
+    +updateCustomer()
+    +deleteCustomer()
+    +generateAppointmentID()
+    +getCustomerName()
+    +setCustomerName()
+    +getAddress()
+    +setAddress()
+    +getCustomerZip()
+    +setCustomerZip()
+    +getCustomerPhone()
+    +setCustomerPhone()
+    +getDivisionId()
+    +setDivisionId()
+
+}
+
+class IntroductionAppointment{
+    -int appointmentID
+    -String title
+    -String description
+    -String location
+    -String type
+    -String start
+    -String end
+    -String startString
+    -String endString
+    -String createdBy
+    -String customerID
+    -int userID
+    -int contactID
+
+    +IntroductionAppointment()
+    +createAppointment()
+    +setType()
+}
+
+class JDBC{
+    -String protocol
+    -String vendor
+    -String location
+    -String databaseName
+    -String jdbcUrl
+    -String driver
+    -String username
+    -String password
+    -Connection connection
+    -PreparedStatement preparedSatement
+
+    +makeConnection()
+    +makePreparedStatement()
+    +getPreparedStatement()
+
+}
+
+class LoginController{
+    +String username
+    +String password
+    +String systemLanguage
+
+    +void initialize()
+    +loginAction(ActionEvent)
+    +cancelAction(ActionEvent)
+    +getUsername()
+}
+
+class Main{
+    +start()
+    +main(String[] args)
+}
+
+class ModifyAppointmentController{
+    +initialize()
+    +setMainController()
+    +saveButtonAction()
+    +cancelButtonAction
+    +convertToUtc()
+    +verifySave()
+    +isAvailable()
+}
+
+class ModifyCustomerController{
+    +String state
+    +ObservableList<String> countries
+    +ObservableList<String> states
+
+    +initialize()
+    +modifyButtonAction()
+    +cancelButtonAction()
+    +setMainController()
+}
+
+Main --> LoginController
+LoginController --> MainController
+MainController --> AddCustomerController
+MainController *- Appointment
+MainController --> CreateAppointmentController
+MainController --> Customers
+MainController --> ModifyAppointmentController
+MainController --> ModifyCustomerController
+Appointment --> AppointmentCRUD
+CreateAppointmentController *- Appointment
+IntroductionAppointment --|> Appointment
+CreateAppointmentController --> JDBC
+AddCustomerController --> JDBC
+ModifyAppointmentController --> JDBC
+ModifyCustomerController --> JDBC
+
+@enduml

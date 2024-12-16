@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.burgetjoel.AddCustomerController">
+   <children>
+      <TextField fx:id="nameField" layoutX="120.0" layoutY="119.0" />
+      <TextField fx:id="addressField" layoutX="120.0" layoutY="161.0" />
+      <TextField fx:id="zipField" layoutX="120.0" layoutY="200.0" />
+      <Label layoutX="65.0" layoutY="123.0" text="Name" />
+      <Label layoutX="59.0" layoutY="165.0" text="Address" />
+      <Label layoutX="72.0" layoutY="204.0" text="Zip" />
+      <Label layoutX="39.0" layoutY="31.0" text="Add a customer" />
+      <ComboBox fx:id="countryBox" layoutX="62.0" layoutY="246.0" prefHeight="25.0" prefWidth="116.0" promptText="Country" />
+      <ComboBox fx:id="stateBox" layoutX="211.0" layoutY="246.0" prefHeight="25.0" prefWidth="116.0" promptText="State" />
+      <Button fx:id="addButton" layoutX="211.0" layoutY="349.0" mnemonicParsing="false" onAction="#addButtonAction" text="Add" />
+      <Button fx:id="cancelButton" layoutX="275.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancelButtonAction" text="Cancel" />
+      <TextField fx:id="phoneField" layoutX="120.0" layoutY="283.0" />
+      <Label layoutX="64.0" layoutY="287.0" text="Phone" />
+      <Label fx:id="warningLabel" layoutX="67.0" layoutY="323.0" text="warningLabel" textFill="#e80e0e" />
+   </children>
+</AnchorPane>

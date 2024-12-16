@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="725.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.burgetjoel.MainController">
+   <children>
+       <TabPane layoutX="561.0" layoutY="126.0">
+          <tabs>
+              <Tab closable="false" text="Weekly View">
+                 <content>
+                     <TableView fx:id="weekAppointmentTableView" prefHeight="256.0" prefWidth="400.0">
+                         <columns>
+                             <TableColumn fx:id="weekID" prefWidth="106.0" text="Appointment ID" />
+                             <TableColumn fx:id="weekTitle" prefWidth="44.0" text="Title" />
+                             <TableColumn fx:id="weekDescription" prefWidth="97.0" text="Description" />
+                             <TableColumn fx:id="weekLocations" prefWidth="98.0" text="Location" />
+                             <TableColumn fx:id="weekType" prefWidth="75.0" text="Type" />
+                             <TableColumn fx:id="weekStart" prefWidth="75.0" text="Start Time" />
+                             <TableColumn fx:id="weekEnd" prefWidth="75.0" text="End Time" />
+                             <TableColumn fx:id="weekCustomerID" prefWidth="75.0" text="Customer ID" />
+                             <TableColumn fx:id="weekUserID" prefWidth="75.0" text="User ID" />
+                         </columns>
+                     </TableView>
+                 </content>
+              </Tab>
+              <Tab closable="false" text="Monthly View">
+                 <content>
+                     <TableView fx:id="monthAppointmentTableView" prefHeight="256.0" prefWidth="400.0">
+                         <columns>
+                             <TableColumn fx:id="monthID" prefWidth="106.0" text="Appointment ID" />
+                             <TableColumn fx:id="monthTitle" prefWidth="44.0" text="Title" />
+                             <TableColumn fx:id="monthDescription" prefWidth="97.0" text="Description" />
+                             <TableColumn fx:id="monthLocations" prefWidth="98.0" text="Location" />
+                             <TableColumn fx:id="monthType" prefWidth="75.0" text="Type" />
+                             <TableColumn fx:id="monthStart" prefWidth="75.0" text="Start Time" />
+                             <TableColumn fx:id="monthEnd" prefWidth="75.0" text="End Time" />
+                             <TableColumn fx:id="monthCustomerID" prefWidth="75.0" text="Customer ID" />
+                             <TableColumn fx:id="monthUserID" prefWidth="75.0" text="User ID" />
+                         </columns>
+                     </TableView>
+                 </content>
+              </Tab>
+          </tabs>
+       </TabPane>
+       <TableView fx:id="customerTableView" layoutX="71.0" layoutY="152.0" prefHeight="256.0" prefWidth="422.0">
+           <columns>
+               <TableColumn fx:id="customerId" prefWidth="76.0" text="Customer ID" />
+               <TableColumn fx:id="customerName" prefWidth="74.0" text="Name" />
+               <TableColumn fx:id="customerAddress" prefWidth="97.0" text="Address" />
+               <TableColumn fx:id="customerZip" prefWidth="67.0" text="Zip Code" />
+               <TableColumn fx:id="customerPhone" prefWidth="107.0" text="Phone Number" />
+               <TableColumn fx:id="divisionId" prefWidth="107.0" text="Division ID" />
+           </columns>
+       </TableView>
+       <Button fx:id="newCustomer" layoutX="81.0" layoutY="420.0" mnemonicParsing="false" onAction="#newCustomerAction" text="Create New " />
+       <Button fx:id="createAppointment" layoutX="567.0" layoutY="420.0" mnemonicParsing="false" onAction="#addAppointmentAction" text="Create New " />
+       <Button fx:id="deleteCustomer" layoutX="242.0" layoutY="420.0" mnemonicParsing="false" onAction="#deleteCustomerAction" text="Delete" />
+       <Button fx:id="editCustomer" layoutX="175.0" layoutY="421.0" mnemonicParsing="false" onAction="#modifyCustomerAction" text="Edit" />
+       <Button fx:id="editAppointment" layoutX="663.0" layoutY="421.0" mnemonicParsing="false" onAction="#modifyAppointmentAction" text="Edit" />
+       <Button fx:id="deleteAppointment" layoutX="729.0" layoutY="420.0" mnemonicParsing="false" onAction="#deleteAppointmentAction" text="Delete" />
+       <Label fx:id="customerWarningLabel" layoutX="81.0" layoutY="126.0" text="Label" textFill="#e80a0a" />
+       <Label fx:id="appointmentWarningLabel" layoutX="567.0" layoutY="103.0" text="Label" textFill="#dd0707" />
+       <Label layoutX="81.0" layoutY="14.0" text="Upcoming Appointments" />
+       <TextArea fx:id="upComingAppointments" editable="false" layoutX="83.0" layoutY="38.0" prefHeight="82.0" prefWidth="258.0" />
+      <TextArea fx:id="totalReportField" editable="false" layoutX="83.0" layoutY="494.0" prefHeight="150.0" prefWidth="287.0" />
+      <Label layoutX="81.0" layoutY="470.0" text="Reports" />
+      <ChoiceBox fx:id="contactBox" layoutX="379.0" layoutY="494.0" prefHeight="25.0" prefWidth="120.0" />
+      <TableView fx:id="scheduleReportTable" layoutX="507.0" layoutY="479.0" prefHeight="168.0" prefWidth="451.0">
+        <columns>
+          <TableColumn fx:id="appointmentID" prefWidth="75.0" text="Appointment ID" />
+          <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="start" prefWidth="75.0" text="Start Time" />
+            <TableColumn fx:id="end" prefWidth="75.0" text="End Time" />
+            <TableColumn fx:id="customerID" prefWidth="75.0" text="Customer ID" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="totalReportBox" layoutX="81.0" layoutY="664.0" prefHeight="25.0" prefWidth="120.0" />
+      <Label layoutX="510.0" layoutY="462.0" text="Customer Schedule" />
+      <Label layoutX="81.0" layoutY="647.0" text="Total Month Hours" />
+      <TextArea fx:id="totalHourText" editable="false" layoutX="214.0" layoutY="658.0" prefHeight="38.0" prefWidth="337.0" />
+      <ChoiceBox fx:id="searchSelector" layoutX="561.0" layoutY="46.0" prefWidth="150.0" />
+      <TextField fx:id="searchField" layoutX="729.0" layoutY="46.0" />
+      <Button fx:id="searchButton" layoutX="897.0" layoutY="46.0" mnemonicParsing="false" text="Search" />
+   </children>
+</Pane>
